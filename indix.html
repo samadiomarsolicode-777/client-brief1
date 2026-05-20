@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Creative Brief Glassmorphism</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left,#00c6ff40,transparent 30%),
+    radial-gradient(circle at bottom right,#7f5af040,transparent 30%),
+    linear-gradient(135deg,#0b1020,#111827,#0f172a);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
+    overflow-x:hidden;
+}
+
+.background-blur{
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00c6ff20;
+    filter:blur(120px);
+    border-radius:50%;
+    top:-100px;
+    left:-100px;
+    z-index:0;
+}
+
+.background-blur2{
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#7f5af030;
+    filter:blur(120px);
+    border-radius:50%;
+    bottom:-150px;
+    right:-100px;
+    z-index:0;
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:950px;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.35);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.header h1{
+    color:#fff;
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.header p{
+    color:#cbd5e1;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.section{
+    margin-bottom:35px;
+}
+
+.section-title{
+    color:#fff;
+    font-size:22px;
+    margin-bottom:20px;
+    font-weight:700;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+@media(max-width:768px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .container{
+        padding:30px 22px;
+    }
+
+    .header h1{
+        font-size:32px;
+    }
+}
+
+.input-group{
+    margin-bottom:22px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:10px;
+    color:#e2e8f0;
+    font-size:14px;
+    font-weight:600;
+}
+
+.input-glass{
+    width:100%;
+    padding:16px 18px;
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.10);
+
+    border-radius:18px;
+
+    color:#fff;
+    outline:none;
+
+    transition:0.3s;
+}
+
+.input-glass:focus{
+    border-color:#00c6ff;
+    background:rgba(255,255,255,0.10);
+    box-shadow:0 0 0 4px rgba(0,198,255,0.15);
+}
+
+textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.input-glass::placeholder{
+    color:#94a3b8;
+}
+
+.checkbox-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:10px;
+}
+
+.checkbox-item{
+    position:relative;
+}
+
+.checkbox-item input{
+    display:none;
+}
+
+.checkbox-item label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:12px 18px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,0.06);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.checkbox-item input:checked + label{
+    background:rgba(0,198,255,0.18);
+    border-color:#00c6ff;
+    transform:translateY(-2px);
+}
+
+.submit-btn{
+    width:100%;
+
+    border:none;
+
+    padding:20px;
+
+    border-radius:22px;
+
+    background:linear-gradient(135deg,#00c6ff,#7f5af0);
+
+    color:#fff;
+
+    font-size:18px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:0.35s;
+
+    margin-top:15px;
+}
+
+.submit-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(0,198,255,0.25);
+}
+
+.note{
+    text-align:center;
+    margin-top:25px;
+    color:#94a3b8;
+    font-size:13px;
+    line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background-blur"></div>
+<div class="background-blur2"></div>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Creative Brief</h1>
+
+        <p>
+            قم بملء هذا النموذج للحصول على تصاميم سوشيال ميديا
+            احترافية تعكس هوية مشروعك بشكل قوي ومميز.
+        </p>
+    </div>
+
+    <form action="https://formsubmit.co/smdpsdcontact@gmail.com" method="POST">
+
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New Creative Brief">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- SECTION 1 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                معلومات المشروع
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>اسم المشروع</label>
+                    <input class="input-glass" type="text" name="brand_name" placeholder="اكتب اسم المشروع">
+                </div>
+
+                <div class="input-group">
+                    <label>المجال</label>
+                    <input class="input-glass" type="text" name="industry" placeholder="Gym / Restaurant / Brand">
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>نبذة عن المشروع</label>
+                <textarea class="input-glass" name="description" placeholder="اكتب وصف مختصر عن المشروع"></textarea>
+            </div>
+
+        </div>
+
+        <!-- SECTION 2 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                أهداف المحتوى
+            </div>
+
+            <div class="checkbox-group">
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="sales" name="goals[]" value="زيادة المبيعات">
+                    <label for="sales">زيادة المبيعات</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="engagement" name="goals[]" value="زيادة التفاعل">
+                    <label for="engagement">زيادة التفاعل</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="branding" name="goals[]" value="بناء الهوية">
+                    <label for="branding">بناء الهوية</label>
+                </div>
+
+                <div class="checkbox-item">
+                    <input type="checkbox" id="ads" name="goals[]" value="إعلانات ممولة">
+                    <label for="ads">إعلانات ممولة</label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SECTION 3 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                الجمهور المستهدف
+            </div>
+
+            <div class="input-group">
+                <label>من هو جمهورك؟</label>
+                <textarea class="input-glass" name="audience"></textarea>
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>المدينة / الدولة</label>
+                    <input class="input-glass" type="text" name="location">
+                </div>
+
+                <div class="input-group">
+                    <label>الفئة العمرية</label>
+                    <input class="input-glass" type="text" name="age_group">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SECTION 4 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                الهوية البصرية
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>ألوان العلامة التجارية</label>
+                    <input class="input-glass" type="text" name="colors">
+                </div>
+
+                <div class="input-group">
+                    <label>نوع الأسلوب</label>
+
+                    <select class="input-glass" name="style">
+
+                        <option>Luxury</option>
+                        <option>Minimal</option>
+                        <option>Dark</option>
+                        <option>Cinematic</option>
+                        <option>Modern</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>روابط أو أمثلة مرجعية</label>
+                <textarea class="input-glass" name="references"></textarea>
+            </div>
+
+        </div>
+
+        <!-- SECTION 5 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                تفاصيل المنشورات
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>عدد التصاميم</label>
+                    <input class="input-glass" type="number" name="designs">
+                </div>
+
+                <div class="input-group">
+                    <label>CTA المطلوب</label>
+                    <input class="input-glass" type="text" name="cta">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SECTION 6 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                معلومات التواصل
+            </div>
+
+            <div class="grid">
+
+                <div class="input-group">
+                    <label>رقم الهاتف</label>
+                    <input class="input-glass" type="text" name="phone">
+                </div>
+
+                <div class="input-group">
+                    <label>العنوان</label>
+                    <input class="input-glass" type="text" name="address">
+                </div>
+
+            </div>
+
+            <div class="input-group">
+                <label>حسابات السوشيال ميديا</label>
+                <textarea class="input-glass" name="socials"></textarea>
+            </div>
+
+        </div>
+
+        <!-- SECTION 7 -->
+
+        <div class="section">
+
+            <div class="section-title">
+                ملاحظات إضافية
+            </div>
+
+            <div class="input-group">
+                <textarea class="input-glass" name="notes" placeholder="أي تفاصيل إضافية تريد إضافتها"></textarea>
+            </div>
+
+        </div>
+
+        <button class="submit-btn" type="submit">
+            إرسال الـ Brief
+        </button>
+
+    </form>
+
+    <div class="note">
+        سيتم إرسال جميع البيانات مباشرة إلى:
+        smdpsdcontact@gmail.com
+    </div>
+
+</div>
+
+</body>
+</html>
